@@ -17,14 +17,17 @@ Bank transaction management system based on Elixir and OTP. The project uses iso
 2. Install dependencies:
   ```bash
   mix deps.get
+  ```
 3. Create the folder for data persistence:
   ```bash
   mkdir data
+  ```
 
 ## Execution
 To start the application, run the following command:
-    ```bash
-    iex -S mix
+```bash
+iex -S mix
+```
 
 ## API Endpoints
 ### POST/transfer
@@ -36,6 +39,7 @@ Allows you to make a transfer between two existing accounts.
   "to": "IBAN_RICEVENTE",
   "amount": 100
 }
+```
 
 #### Responses:
 - 200 OK: Transfer completed.
