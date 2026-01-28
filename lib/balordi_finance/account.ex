@@ -34,7 +34,7 @@ defmodule BalordiFinance.Account do
       save_to_disk(state.iban, new_balance)
       {:reply, :ok, %{state | balance: new_balance}}
     else
-      {:reply, {:error, "Insufficient funds, barbone!", state}}
+      {:reply, {:error, "Insufficient funds, barbone!"}, state}
     end
   end
 
@@ -64,20 +64,27 @@ defmodule BalordiFinance.Account do
 
   # Create the address in the registry
   # Register the IBAN as a key, useful for finding the process without using the PID
-  defp via_tuple(iban), do: {:via, Registry, {Balordi.Registry, iban}}
+  def via_tuple(iban), do: {:via, Registry, {Balordi.Registry, iban}}
 
   # Utility for saving data to disk, so that it is not lost in the event of errors
   defp save_to_disk(iban, balance) do
-    File.write!("data/#{iban}.txt", "#{balance}")
+    File.write!(data_path(iban), "#{balance}")
   end
 
   # Utility for reading data on disk
   defp read_from_disk(iban, default_balance) do
-    case File.read("data/#{iban}.txt") do
+    case File.read(data_path(iban)) do
       {:ok, content} ->
         String.to_integer(content)
       {:error, _} ->
         default_balance
     end
+  end
+
+  # If we are in the test environment use 'test_data' folder, otherwise the default 'data' folder
+  defp data_path(iban) do
+    folder = if Mix.env() == :test, do: "test_data", else: "data"
+    File.mkdir_p!(folder)
+    "#{folder}/#{iban}.txt"
   end
 end

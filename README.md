@@ -32,8 +32,8 @@ Allows you to make a transfer between two existing accounts.
 #### Payload JSON:
 ```json
 {
-  "from": "IBAN_MITTENTE",
-  "to": "IBAN_RICEVENTE",
+  "from": "IBAN_FROM",
+  "to": "IBAN_TO",
   "amount": 100
 }
 
