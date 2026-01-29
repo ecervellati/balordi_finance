@@ -1,4 +1,4 @@
-# BalordiFinance Backend
+# Balordi Finance
 
 Distributed banking ecosystem designed to demonstrate the integration between an actor model (Elixir), ingestor (Go) and UI (React)
 
@@ -8,8 +8,8 @@ Distributed banking ecosystem designed to demonstrate the integration between an
 
 ## Architecture
 This project consists of three independent components working together:
-- **Core Backend (Elixir)**: It manages bank accounts as isolated processes (GenServers) within a supervision tree, ensuring fault tolerance and state consistency.
-- **High-Speed Ingestor (Go)**: A CLI tool built to handle massive transaction volumes. It processes CSV data in parallel using a worker pool pattern to stress-test the backend API.
+- **Core Back-end (Elixir)**: It manages bank accounts as isolated processes (GenServers) within a supervision tree, ensuring fault tolerance and state consistency.
+- **High-Speed Ingestor (Go)**: A CLI tool built to handle massive transaction volumes. It processes CSV data in parallel using a worker pool pattern to stress-test the back-end API.
 - **Real-Time Dashboard (React)**: A pixel-art themed interface that displays account balances in real-time. It uses custom Hooks to separate business logic from the UI.
 
 ## Key Features
@@ -19,7 +19,7 @@ This project consists of three independent components working together:
 
 ## Installation
 1. Clone the repository
-2. Backend (Elixir):
+2. Back-end (Elixir):
   ```bash
   cd balordi_finance_server
   mix deps.get
