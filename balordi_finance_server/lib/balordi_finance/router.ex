@@ -46,7 +46,7 @@ defmodule BalordiFinance.Router do
   post "/accounts" do
     iban = conn.body_params["iban"]
     balance =
-      case conn.body_params["balance"] do
+      case conn.body_params["amount"] do
         b when is_binary(b) -> String.to_integer(b)
         b when is_integer(b) -> b
         _ -> 0

@@ -24,7 +24,7 @@ export function useBankLogic() {
       const response = await fetch(`${BASE_URL}/accounts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ iban, balance: parseInt(balance) || 0 })
+        body: JSON.stringify({ iban, amount: parseInt(balance) || 0 })
       });
       if (response.ok) {
         setStatus("NEW HERO JOINED!");
@@ -56,7 +56,7 @@ export function useBankLogic() {
 
   useEffect(() => {
     fetchAccounts();
-    const interval = setInterval(fetchAccounts, 2000);
+    const interval = setInterval(fetchAccounts, 500);
     return () => clearInterval(interval);
   }, [fetchAccounts]);
 

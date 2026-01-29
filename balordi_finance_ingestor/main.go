@@ -18,6 +18,17 @@ type Transaction struct {
 	Amount int    `json:"amount"`
 }
 
+var baseURL string
+
+func init() {
+	baseURL = os.Getenv("API_URL")
+	if baseURL == "" {
+		baseURL = "http://localhost:4005"
+	}
+
+	fmt.Printf("Configuration loaded: API URL -> %s\n", baseURL)
+}
+
 func main() {
 	const numJobs = 100
 	const numWorkers = 10
@@ -46,7 +57,7 @@ func worker(id int, jobs <-chan Transaction, wg *sync.WaitGroup) {
 
 	for t := range jobs {
 		jsonData, _ := json.Marshal(t)
-		resp, err := client.Post("http://localhost:4005/transfer", "application/json", bytes.NewBuffer(jsonData))
+		resp, err := client.Post(fmt.Sprintf("%s/transfer", baseURL), "application/json", bytes.NewBuffer(jsonData))
 
 		if err != nil {
 			fmt.Printf("Worker %d: Errore -> %v\n", id, err)

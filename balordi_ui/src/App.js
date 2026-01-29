@@ -9,12 +9,12 @@ function App() {
 
   const handleCreate = async () => {
     const success = await actions.createAccount(formAccount.iban, formAccount.balance);
-    if (success) setFormAccount({ iban: "", balance: 0 });
+    if (success) setFormAccount({ iban: "", balance: "" });
   };
 
   const handleTransfer = async () => {
     const success = await actions.executeTransfer(formTransfer.from, formTransfer.to, formTransfer.amount);
-    if (success) setFormTransfer({ ...formTransfer, amount: 0 });
+    if (success) setFormTransfer({ ...formTransfer, from: "", to: "", amount: "" });
   };
 
   return (
