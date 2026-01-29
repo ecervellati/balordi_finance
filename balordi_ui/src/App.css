@@ -1,0 +1,174 @@
+/* VARIABLES AND RESET */
+:root {
+  --pixel-bg-dark: #212529;
+  --pixel-bg-light: #abd5bd;
+  --pixel-green: #51cf66;
+  --pixel-red: #ff6b6b;
+  --pixel-yellow: #fcc419;
+  --pixel-border: #000000;
+}
+
+body {
+  background-color: var(--pixel-bg-dark);
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  image-rendering: pixelated;
+  margin: 0;
+  padding: 0;
+}
+
+/* MAIN CONTROLS */
+.retro-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--pixel-bg-light);
+  color: var(--pixel-border);
+  border: 4px solid var(--pixel-border);
+  box-shadow: 8px 8px 0px #000;
+}
+
+.retro-title {
+  text-align: center;
+  color: var(--pixel-yellow);
+  text-shadow: 2px 2px 0px #000;
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.status-bar {
+  background-color: #000;
+  color: #0f0;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 10px;
+  border: 2px solid #333;
+}
+
+/* PANELS AND INPUT */
+.pixel-panel {
+  background: #fff;
+  border: 4px solid #000;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.pixel-panel h3 {
+  margin-top: 0;
+  font-size: 10px;
+  color: var(--pixel-yellow);
+  background: #000;
+  display: inline-block;
+  padding: 5px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.input-group.vertical {
+  flex-direction: column;
+}
+
+input {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  padding: 10px;
+  border: 3px solid #000;
+  outline: none;
+  background: #eee;
+}
+
+input:focus {
+  background: #fff;
+  border-color: var(--pixel-green);
+}
+
+/* TABLE */
+.pixel-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 4px solid var(--pixel-border);
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.pixel-table th {
+  background-color: var(--pixel-bg-dark);
+  color: var(--pixel-yellow);
+  padding: 15px;
+  text-align: left;
+  border-bottom: 4px solid var(--pixel-border);
+  text-transform: uppercase;
+}
+
+.pixel-table td {
+  padding: 20px 15px;
+  border-bottom: 2px solid var(--pixel-border);
+}
+
+.pixel-row:hover {
+  background-color: #e9ecef;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewport="0 0 16 16" fill="black"><polygon points="0,0 16,8 0,16"/></svg>'), auto;
+}
+
+/* IBAN ELEMENTS + SCORE */
+.iban-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;    
+}
+
+.challenger-label {
+  font-size: 8px;
+  color: #666;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.iban-text {
+  font-size: 11px;
+  color: var(--pixel-border);
+  letter-spacing: 1px;
+}
+
+.score-positive {
+  color: var(--pixel-green);
+  text-shadow: 1px 1px 0px #000;
+}
+
+.score-negative {
+  color: var(--pixel-red);
+}
+
+/* BUTTONS */
+.pixel-button {
+  background-color: var(--pixel-yellow);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  padding: 15px 30px;
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.pixel-button:active {
+  box-shadow: 0px 0px 0px #000;
+  transform: translate(4px, 4px);
+}
+
+.pixel-button:hover {
+  background-color: var(--pixel-green);
+}
+
+.pixel-button.small {
+  padding: 5px 15px;
+  font-size: 8px;
+}

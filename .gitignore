@@ -1,24 +1,29 @@
-# The directory Mix will write compiled artifacts to.
-/_build/
+# --- ELIXIR ---
+/balordi_finance_server/_build
+/balordi_finance_server/deps
+/balordi_finance_server/*.beam
+/balordi_finance_server/erl_crash.dump
+/balordi_finance_server/.elixir_ls/
 
-# If you run "mix test --cover", coverage assets end up here.
-/cover/
+# --- GO ---
+# Binari compilati
+/balordi_finance_ingestor/*.exe
+/balordi_finance_ingestor/*.exe~
+/balordi_finance_ingestor/*.dll
+/balordi_finance_ingestor/*.so
+/balordi_finance_ingestor/*.dylib
 
-# The directory Mix downloads your dependencies sources to.
-/deps/
+# --- REACT / NODE ---
+/balordi_ui/node_modules/
+/balordi_ui/npm-debug.log*
+/balordi_ui/yarn-debug.log*
+/balordi_ui/yarn-error.log*
+/balordi_ui/build
+/balordi_ui/.env
+/balordi_ui/.env.local
+/balordi_ui/.env.development.local
 
-# Where third-party dependencies like ExDoc output generated docs.
-/doc/
-
-# Temporary files, for example, from tests.
-/tmp/
-
-# If the VM crashes, it generates a dump, let's ignore it too.
-erl_crash.dump
-
-# Also ignore archive artifacts (built via "mix archive.build").
-*.ez
-
-# Ignore package tarball (built via "mix hex.build").
-balordi_finance-*.tar
-
+# --- VARIE ---
+.DS_Store
+Thumbs.db
+data/

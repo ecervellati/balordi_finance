@@ -23,7 +23,8 @@ defmodule BalordiFinance.MixProject do
   defp deps do
     [
       {:plug_cowboy, "~> 2.0"},
-      {:jason, "~> 1.4"}
+      {:jason, "~> 1.4"},
+      {:cors_plug, "~> 3.0"}
     ]
   end
 end
