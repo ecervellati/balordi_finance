@@ -32,7 +32,7 @@ This project consists of three independent components working together:
   npm install
   npm start
   ```
-4. Ingestor (Go)
+4. Ingestor (Go):
   Create new environment variable -> API_URL=http://localhost:4005.
   ```bash
   cd balordi_ingestor
